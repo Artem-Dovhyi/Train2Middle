@@ -1,5 +1,6 @@
 import React from 'react';
+import { StyledButton } from './Button.styled';
 
 export const Button = ({ text, onClick }) => (
-	<button onClick={onClick}>{text}</button>
+	<StyledButton onClick={onClick}>{text}</StyledButton>
 );

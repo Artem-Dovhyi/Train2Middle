@@ -14,7 +14,8 @@ export const LogoContainer = styled.div`
 `;
 
 export const RightBlock = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 7.5rem;
 	align-items: center;
 	gap: 1rem;
 `;
