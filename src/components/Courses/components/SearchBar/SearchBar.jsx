@@ -3,16 +3,16 @@ import { Button, Input } from '../../../../common';
 import { searchPlaceholderText, searchText } from '../../../../constants';
 import { SearchBarContainer } from './SearchBar.styled';
 
-export const SearchBar = () => {
+export const SearchBar = ({ onSearchChange, value, onSearchClick }) => {
 	return (
 		<SearchBarContainer>
 			<Input
 				placeholderText={searchPlaceholderText}
-				labelText=''
-				onChange={() => {}}
-				htmlFor={searchText}
+				onChange={onSearchChange}
+				value={value}
+				name={searchText}
 			/>
-			<Button text={searchText} onClick={() => {}} />
+			<Button text={searchText} handleClick={() => onSearchClick()} />
 		</SearchBarContainer>
 	);
 };

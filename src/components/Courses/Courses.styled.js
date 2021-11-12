@@ -1,19 +1,16 @@
 import styled from 'styled-components';
 
-export const CoursesContainer = styled.main`
+export const CoursesContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	padding: 1rem;
-	border: 1px solid blue;
 `;
 
 export const TopBlock = styled.div`
 	display: grid;
-	grid-template-columns: 36rem 12rem;
+	grid-template: auto / 36rem auto;
 	justify-content: space-between;
-	align-items: center;
-	height: 2.25rem;
+	align-items: flex-end;
 `;
 
 export const CoursesList = styled.ul`

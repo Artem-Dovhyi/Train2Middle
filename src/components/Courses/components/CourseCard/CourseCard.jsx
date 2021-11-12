@@ -2,41 +2,41 @@ import React from 'react';
 import { Button } from '../../../../common';
 import { showCourse } from '../../../../constants';
 import {
-	ButtonContainer,
 	CourseCardContainer,
 	CourseInfo,
 	LeftBlock,
 	RightBlock,
 } from './CourseCard.styled';
+import { filterById, timeConvert } from '../../../../helpers';
 
-export const CourseCard = () => {
+export const CourseCard = ({ course, authorsList }) => {
+	const { title, description, duration, authors } = course;
+
+	const filteredAuthors = filterById(authors, authorsList);
+	const authorsString = filteredAuthors.map((author) => author.name).join(', ');
+
+	const convertedDuration = timeConvert(duration);
 	return (
 		<CourseCardContainer>
 			<LeftBlock>
-				<h1>Java</h1>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-					sequi architecto quisquam numquam culpa ipsa, minus possimus harum,
-					pariatur, eligendi temporibus! Eum fugit iusto quibusdam quasi
-					deleniti obcaecati voluptate commodi!
-				</p>
+				<h1>{title}</h1>
+				<p>{description}</p>
 			</LeftBlock>
 			<RightBlock>
 				<CourseInfo>
 					<li>
-						<b>Authors: </b>Lorem ipsum, dolor sit, Lorem, ipsum. Lorem ipsum
-						dolor sit.
+						<b>Authors: </b>
+						{authorsString}
 					</li>
 					<li>
-						<b>Duration: </b>08:00 hours
+						<b>Duration: </b>
+						{convertedDuration} hours
 					</li>
 					<li>
 						<b>Created: </b>01.02.2018
 					</li>
 				</CourseInfo>
-				<ButtonContainer>
-					<Button onClick={() => {}} text={showCourse} />
-				</ButtonContainer>
+				<Button handleClick={() => {}} text={showCourse} />
 			</RightBlock>
 		</CourseCardContainer>
 	);

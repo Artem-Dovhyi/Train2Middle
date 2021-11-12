@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledInput = styled.input`
+export const StyledTextarea = styled.textarea`
+	min-height: 9rem;
+	max-height: 15rem;
 	width: 100%;
-	border: 1px solid orange;
-	padding: 0 1rem;
-	height: 2.25rem;
+	padding: 1rem;
+	border: 1px solid yellow;
+	resize: vertical;
 `;
 
 export const StyledLabel = styled.label`

@@ -4,7 +4,7 @@ export const HeaderContainer = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border: 1px solid black;
+	border: 1px solid red;
 	padding: 1rem;
 `;
 
@@ -15,7 +15,7 @@ export const LogoContainer = styled.div`
 
 export const RightBlock = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 7.5rem;
+	grid-template-columns: 1fr auto;
 	align-items: center;
 	gap: 1rem;
 `;

@@ -13,7 +13,7 @@ export const Header = () => {
 			</LogoContainer>
 			<RightBlock>
 				<h3>Artem</h3>
-				<Button onClick={() => {}} text={loginText} />
+				<Button handleClick={() => {}} text={loginText} />
 			</RightBlock>
 		</HeaderContainer>
 	);

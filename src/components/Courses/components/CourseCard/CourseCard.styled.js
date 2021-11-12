@@ -37,7 +37,3 @@ export const CourseInfo = styled.ul`
 		white-space: nowrap;
 	}
 `;
-
-export const ButtonContainer = styled.div`
-	width: 15rem;
-`;

@@ -1,17 +1,25 @@
 import React from 'react';
-import { StyledInput } from './Input.styled';
+import { StyledInput, StyledLabel } from './Input.styled';
 
-export const Input = ({ labelText, placeholderText, onChange }) => {
+export const Input = ({
+	labelText = '',
+	placeholderText = '',
+	onChange = () => {},
+	value,
+	name,
+	type = 'text',
+}) => {
 	return (
-		<form>
-			<label>
-				{labelText}
-				<StyledInput
-					type='text'
-					placeholder={placeholderText}
-					onChange={onChange}
-				/>
-			</label>
-		</form>
+		<StyledLabel htmlFor={name}>
+			{labelText}
+			<StyledInput
+				type={type}
+				placeholder={placeholderText}
+				onChange={onChange}
+				value={value}
+				id={name}
+				name={name}
+			/>
+		</StyledLabel>
 	);
 };
