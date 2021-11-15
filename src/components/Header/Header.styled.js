@@ -9,7 +9,6 @@ export const HeaderContainer = styled.header`
 `;
 
 export const LogoContainer = styled.div`
-	width: 4rem;
 	height: 4rem;
 `;
 
