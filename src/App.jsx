@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { v4 } from 'uuid';
 
+import { Courses, Header, CreateCourse } from './components';
+
+import { mockedAuthorsList, mockedCoursesList } from './constants';
+
 import './App.css';
 import { Container, MainContent } from './App.styled';
-import { Courses, Header, CreateCourse } from './components';
-import { mockedAuthorsList, mockedCoursesList } from './constants';
 
 function App() {
 	const [courses, setCourses] = useState(mockedCoursesList);
@@ -28,19 +30,19 @@ function App() {
 		<Container>
 			<Header />
 			<MainContent>
-				{isFormActive && (
+				{isFormActive ? (
 					<CreateCourse
 						authorsList={authorsList}
 						createAuthor={createAuthor}
 						createCourse={createCourse}
 					/>
+				) : (
+					<Courses
+						courses={courses}
+						authorsList={authorsList}
+						openForm={setFormActive}
+					/>
 				)}
-
-				<Courses
-					courses={courses}
-					authorsList={authorsList}
-					openForm={setFormActive}
-				/>
 			</MainContent>
 		</Container>
 	);

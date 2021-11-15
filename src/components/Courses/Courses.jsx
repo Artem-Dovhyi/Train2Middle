@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+
 import { Button } from '../../common';
-import { addNewCourseText } from '../../constants';
-import { searchFilter } from '../../helpers';
 import { CourseCard, SearchBar } from './components';
+
+import { ADD_NEW_COURSE_TEXT } from '../../constants';
+import { searchFilter } from '../../helpers';
+
 import { CoursesContainer, CoursesList, TopBlock } from './Courses.styled';
 
 export const Courses = ({ courses, authorsList, openForm }) => {
@@ -31,7 +34,7 @@ export const Courses = ({ courses, authorsList, openForm }) => {
 					onSearchChange={onSearchChange}
 					onSearchClick={onSearchClick}
 				/>
-				<Button text={addNewCourseText} handleClick={() => openForm(true)} />
+				<Button text={ADD_NEW_COURSE_TEXT} handleClick={() => openForm(true)} />
 			</TopBlock>
 			<CoursesList>
 				{filteredCourses.map((course) => (

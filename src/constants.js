@@ -41,17 +41,23 @@ export const mockedAuthorsList = [
 	},
 ];
 
-export const searchText = 'Search';
-export const searchPlaceholderText = 'Enter course name or id...';
-export const showCourse = 'Show course';
-export const loginText = 'Login';
-export const logoutText = 'Logout';
-export const addNewCourseText = 'Add new course';
-export const enterTitleText = 'Enter title...';
-export const enterDescriptionText = 'Enter descrtiption';
-export const enterAuthorNameText = 'Enter author name...';
-export const enterDurationText = 'Enter duration in minutes...';
-export const createCourseText = 'Create course';
-export const createAuthorText = 'Create author';
-export const addAuthorText = 'Add author';
-export const deleteAuthorText = 'Delete author';
+export const SEARCH_TEXT = 'Search';
+export const SEARCH_PLACEHOLDER_TEXT = 'Enter course name or id...';
+export const SHOW_COURSE_TEXT = 'Show course';
+export const LOGIN_TEXT = 'Login';
+export const LOGOUT_TEXT = 'Logout';
+export const ADD_NEW_COURSE_TEXT = 'Add new course';
+export const ENTER_TITLE_TEXT = 'Enter title...';
+export const ENTER_DESCRIPTION_TEXT = 'Enter descrtiption';
+export const ENTER_AUTHOR_NAME_TEXT = 'Enter author name...';
+export const ENTER_DURATION_TEXT = 'Enter duration in minutes...';
+export const CREATE_COURSE_TEXT = 'Create course';
+export const CREATE_AUTHOR_TEXT = 'Create author';
+export const ADD_AUTHOR_TEXT = 'Add author';
+export const DELETE_AUTHOR_TEXT = 'Delete author';
+export const COURSE_AUTHORS_TEXT = 'Course authors';
+export const AUTHORS_TEXT = 'Authors';
+export const AUTHOR_NAME_TEXT = 'Author name';
+export const DURATION_TEXT = 'Duration';
+export const LENGTH_ERROR_TEXT = 'At least 2 characters';
+export const DURATION_ERROR_TEXT = 'Must be > 0';

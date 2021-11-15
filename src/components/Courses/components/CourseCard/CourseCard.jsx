@@ -1,13 +1,17 @@
 import React from 'react';
+
 import { Button } from '../../../../common';
-import { showCourse } from '../../../../constants';
+
+import { SHOW_COURSE_TEXT } from '../../../../constants';
+
+import { filterById, timeConvert } from '../../../../helpers';
+
 import {
 	CourseCardContainer,
 	CourseInfo,
 	LeftBlock,
 	RightBlock,
 } from './CourseCard.styled';
-import { filterById, timeConvert } from '../../../../helpers';
 
 export const CourseCard = ({ course, authorsList }) => {
 	const { title, description, duration, authors } = course;
@@ -36,7 +40,7 @@ export const CourseCard = ({ course, authorsList }) => {
 						<b>Created: </b>01.02.2018
 					</li>
 				</CourseInfo>
-				<Button handleClick={() => {}} text={showCourse} />
+				<Button handleClick={() => {}} text={SHOW_COURSE_TEXT} />
 			</RightBlock>
 		</CourseCardContainer>
 	);

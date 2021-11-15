@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledInput, StyledLabel } from './Input.styled';
+import { StyledInput, StyledInputContainer, StyledLabel } from './Input.styled';
 
 export const Input = ({
 	labelText = '',
@@ -7,11 +7,16 @@ export const Input = ({
 	onChange = () => {},
 	value,
 	name,
+	isError = false,
+	errorText = 'Error',
 	type = 'text',
 }) => {
 	return (
-		<StyledLabel htmlFor={name}>
-			{labelText}
+		<StyledInputContainer>
+			<StyledLabel htmlFor={name}>
+				{labelText}
+				{isError && <span> | {errorText}</span>}
+			</StyledLabel>
 			<StyledInput
 				type={type}
 				placeholder={placeholderText}
@@ -20,6 +25,6 @@ export const Input = ({
 				id={name}
 				name={name}
 			/>
-		</StyledLabel>
+		</StyledInputContainer>
 	);
 };

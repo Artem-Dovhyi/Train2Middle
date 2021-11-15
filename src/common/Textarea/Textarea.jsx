@@ -1,16 +1,31 @@
 import React from 'react';
-import { StyledLabel, StyledTextarea } from './Textarea.styled';
+import {
+	StyledLabel,
+	StyledTextarea,
+	StyledTextareaContainer,
+} from './Textarea.styled';
 
-export const Textarea = ({ labelText, placeholderText, onChange, name }) => {
+export const Textarea = ({
+	labelText = '',
+	placeholderText = '',
+	onChange = () => {},
+	value,
+	name,
+	isError = false,
+	errorText = 'Error',
+}) => {
 	return (
-		<StyledLabel htmlFor={name}>
-			{labelText}
+		<StyledTextareaContainer>
+			<StyledLabel htmlFor={name}>
+				{labelText}
+				{isError && <span> | {errorText}</span>}
+			</StyledLabel>
 			<StyledTextarea
 				name={name}
 				id={name}
 				placeholder={placeholderText}
 				onChange={onChange}
 			/>
-		</StyledLabel>
+		</StyledTextareaContainer>
 	);
 };

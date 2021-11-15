@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Button } from '../../../../common';
+
 import { StyledAuthorItem } from './AuthorItem.styled';
 
 export const AuthorItem = ({ name, id, handleClick, buttonText }) => {

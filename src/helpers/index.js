@@ -1,2 +1,3 @@
 export { timeConvert } from './pipeDuration';
-export { filterById, searchFilter } from './filters';
+export { filterById, searchFilter, excludeById } from './filters';
+export { dateGenerator } from './dateGenerator';
