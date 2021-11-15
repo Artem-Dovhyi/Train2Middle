@@ -4,17 +4,17 @@ export const HeaderContainer = styled.header`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border: 1px solid black;
+	border: 1px solid red;
 	padding: 1rem;
 `;
 
 export const LogoContainer = styled.div`
-	width: 4rem;
 	height: 4rem;
 `;
 
 export const RightBlock = styled.div`
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr auto;
 	align-items: center;
 	gap: 1rem;
 `;

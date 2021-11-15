@@ -1,7 +1,11 @@
 import React from 'react';
-import { StyledInput, StyledInputContainer, StyledLabel } from './Input.styled';
+import {
+	StyledLabel,
+	StyledTextarea,
+	StyledTextareaContainer,
+} from './Textarea.styled';
 
-export const Input = ({
+export const Textarea = ({
 	labelText = '',
 	placeholderText = '',
 	onChange = () => {},
@@ -9,22 +13,19 @@ export const Input = ({
 	name,
 	isError = false,
 	errorText = 'Error',
-	type = 'text',
 }) => {
 	return (
-		<StyledInputContainer>
+		<StyledTextareaContainer>
 			<StyledLabel htmlFor={name}>
 				{labelText}
 				{isError && <span> | {errorText}</span>}
 			</StyledLabel>
-			<StyledInput
-				type={type}
+			<StyledTextarea
+				name={name}
+				id={name}
 				placeholder={placeholderText}
 				onChange={onChange}
-				value={value}
-				id={name}
-				name={name}
 			/>
-		</StyledInputContainer>
+		</StyledTextareaContainer>
 	);
 };
