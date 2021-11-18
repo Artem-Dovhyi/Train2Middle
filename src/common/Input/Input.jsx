@@ -1,5 +1,10 @@
 import React from 'react';
-import { StyledInput, StyledInputContainer, StyledLabel } from './Input.styled';
+import {
+	StyledInput,
+	StyledInputContainer,
+	StyledLabel,
+	ErrorText,
+} from './Input.styled';
 
 export const Input = ({
 	labelText = '',
@@ -13,10 +18,7 @@ export const Input = ({
 }) => {
 	return (
 		<StyledInputContainer>
-			<StyledLabel htmlFor={name}>
-				{labelText}
-				{isError && <span> | {errorText}</span>}
-			</StyledLabel>
+			<StyledLabel htmlFor={name}>{labelText}</StyledLabel>
 			<StyledInput
 				type={type}
 				placeholder={placeholderText}
@@ -25,6 +27,7 @@ export const Input = ({
 				id={name}
 				name={name}
 			/>
+			{isError && <ErrorText>{errorText}</ErrorText>}
 		</StyledInputContainer>
 	);
 };

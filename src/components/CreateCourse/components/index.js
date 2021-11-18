@@ -1,5 +1,5 @@
 export { AuthorItem } from './AuthorItem/AuthorItem';
-export { GeneralBlock } from './GeneralBlock/GeneralBlock';
+export { CourseInfoForm } from './CourseInfoForm/CourseInfoForm';
 export { AuthorList } from './AuthorList/AuthorList';
-export { AdditionalBlock } from './AdditionalBlock/AdditionalBlock';
-export { AdditionalItem } from './AdditionalItem/AdditionalItem';
+export { CourseDetailsForm } from './CourseDetailsForm/CourseDetailsForm';
+export { CourseDetailsFormItem } from './CourseDetailsFormItem/CourseDetailsFormItem';

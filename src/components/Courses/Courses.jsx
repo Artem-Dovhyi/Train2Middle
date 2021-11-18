@@ -6,7 +6,7 @@ import { CourseCard, SearchBar } from './components';
 import { ADD_NEW_COURSE_TEXT } from '../../constants';
 import { searchFilter } from '../../helpers';
 
-import { CoursesContainer, CoursesList, TopBlock } from './Courses.styled';
+import { CoursesContainer, CoursesList, CoursesHeader } from './Courses.styled';
 
 export const Courses = ({ courses, authorsList, openForm }) => {
 	const [searchText, setSearchText] = useState('');
@@ -15,7 +15,7 @@ export const Courses = ({ courses, authorsList, openForm }) => {
 	const onSearchChange = (e) => {
 		const { value } = e.target;
 		setSearchText(value);
-		if (!value) setFilteredCourses(searchFilter(courses, searchText));
+		if (!value) setFilteredCourses(searchFilter(courses, ''));
 	};
 
 	const onSearchClick = () => {
@@ -28,14 +28,14 @@ export const Courses = ({ courses, authorsList, openForm }) => {
 
 	return (
 		<CoursesContainer>
-			<TopBlock>
+			<CoursesHeader>
 				<SearchBar
 					value={searchText}
 					onSearchChange={onSearchChange}
 					onSearchClick={onSearchClick}
 				/>
-				<Button text={ADD_NEW_COURSE_TEXT} handleClick={() => openForm(true)} />
-			</TopBlock>
+				<Button text={ADD_NEW_COURSE_TEXT} handleClick={openForm} />
+			</CoursesHeader>
 			<CoursesList>
 				{filteredCourses.map((course) => (
 					<CourseCard

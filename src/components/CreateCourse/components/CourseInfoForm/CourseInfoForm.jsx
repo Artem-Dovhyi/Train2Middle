@@ -13,17 +13,17 @@ import {
 	ButtonContainer,
 	TextareaContainer,
 	TitleInputContainer,
-	TopBlock,
-} from './GeneralBlock.styled';
+	StyledCourseInfoForm,
+} from './CourseInfoForm.styled';
 
-export const GeneralBlock = ({
+export const CourseInfoForm = ({
 	title,
 	description,
 	generalOnChange,
 	handleSubmit,
 }) => {
 	return (
-		<TopBlock>
+		<StyledCourseInfoForm>
 			<TitleInputContainer>
 				<Input
 					name='title'
@@ -49,6 +49,6 @@ export const GeneralBlock = ({
 					errorText={LENGTH_ERROR_TEXT}
 				/>
 			</TextareaContainer>
-		</TopBlock>
+		</StyledCourseInfoForm>
 	);
 };

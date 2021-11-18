@@ -1,25 +1,37 @@
 import React from 'react';
+import { CourseDetailsItem } from '..';
 
 import { Button } from '../../../../common';
 
-import { SHOW_COURSE_TEXT } from '../../../../constants';
+import {
+	AUTHORS_TEXT,
+	CREATED_TEXT,
+	DURATION_TEXT,
+	SHOW_COURSE_TEXT,
+} from '../../../../constants';
 
-import { filterById, timeConvert } from '../../../../helpers';
+import {
+	convertDateFormat,
+	filterById,
+	timeConvert,
+} from '../../../../helpers';
 
 import {
 	CourseCardContainer,
-	CourseInfo,
+	CourseDetailsList,
 	LeftBlock,
 	RightBlock,
 } from './CourseCard.styled';
 
 export const CourseCard = ({ course, authorsList }) => {
-	const { title, description, duration, authors } = course;
+	const { title, description, duration, authors, creationDate } = course;
 
 	const filteredAuthors = filterById(authors, authorsList);
 	const authorsString = filteredAuthors.map((author) => author.name).join(', ');
 
 	const convertedDuration = timeConvert(duration);
+	const convertedDate = convertDateFormat(creationDate);
+
 	return (
 		<CourseCardContainer>
 			<LeftBlock>
@@ -27,19 +39,20 @@ export const CourseCard = ({ course, authorsList }) => {
 				<p>{description}</p>
 			</LeftBlock>
 			<RightBlock>
-				<CourseInfo>
-					<li>
-						<b>Authors: </b>
-						{authorsString}
-					</li>
-					<li>
-						<b>Duration: </b>
-						{convertedDuration} hours
-					</li>
-					<li>
-						<b>Created: </b>01.02.2018
-					</li>
-				</CourseInfo>
+				<CourseDetailsList>
+					<CourseDetailsItem
+						title={AUTHORS_TEXT}
+						contentString={authorsString}
+					/>
+					<CourseDetailsItem
+						title={DURATION_TEXT}
+						contentString={convertedDuration + ' hours'}
+					/>
+					<CourseDetailsItem
+						title={CREATED_TEXT}
+						contentString={convertedDate}
+					/>
+				</CourseDetailsList>
 				<Button handleClick={() => {}} text={SHOW_COURSE_TEXT} />
 			</RightBlock>
 		</CourseCardContainer>

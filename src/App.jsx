@@ -12,7 +12,7 @@ function App() {
 	const [courses, setCourses] = useState(mockedCoursesList);
 	const [authorsList, setAuthorsList] = useState(mockedAuthorsList);
 
-	const [isFormActive, setFormActive] = useState(false);
+	const [isFormActive, toggleFormActive] = useState(false);
 
 	const createAuthor = (authorName) => {
 		const newAuthor = { id: v4(), name: authorName };
@@ -23,7 +23,7 @@ function App() {
 
 	const createCourse = (course) => {
 		setCourses((prevState) => [...prevState, course]);
-		setFormActive(false);
+		toggleFormActive(false);
 	};
 
 	return (
@@ -40,7 +40,7 @@ function App() {
 					<Courses
 						courses={courses}
 						authorsList={authorsList}
-						openForm={setFormActive}
+						openForm={() => toggleFormActive(true)}
 					/>
 				)}
 			</MainContent>

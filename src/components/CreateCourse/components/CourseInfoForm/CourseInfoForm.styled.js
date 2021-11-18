@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TopBlock = styled.div`
+export const StyledCourseInfoForm = styled.div`
 	display: grid;
 	grid-template:
 		'title button' auto

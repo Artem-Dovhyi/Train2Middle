@@ -1,14 +1,14 @@
 export const timeConvert = (n) => {
 	const num = n;
 	const hours = num / 60;
-	let rhours = Math.floor(hours);
-	const minutes = (hours - rhours) * 60;
-	let rminutes = Math.round(minutes);
-	if (rhours < 10) {
-		rhours = `0${rhours}`;
+	let roundedHours = Math.floor(hours);
+	const minutes = (hours - roundedHours) * 60;
+	let roundedMinutes = Math.round(minutes);
+	if (roundedHours < 10) {
+		roundedHours = `0${roundedHours}`;
 	}
-	if (rminutes < 10) {
-		rminutes = `0${rminutes}`;
+	if (roundedMinutes < 10) {
+		roundedMinutes = `0${roundedMinutes}`;
 	}
-	return `${rhours}:${rminutes}`;
+	return `${roundedHours}:${roundedMinutes}`;
 };

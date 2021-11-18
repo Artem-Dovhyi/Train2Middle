@@ -26,14 +26,9 @@ export const RightBlock = styled.div`
 	gap: 1rem;
 `;
 
-export const CourseInfo = styled.ul`
+export const CourseDetailsList = styled.ul`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-	& > li {
-		text-overflow: ellipsis;
-		overflow: hidden;
-		white-space: nowrap;
-	}
 `;

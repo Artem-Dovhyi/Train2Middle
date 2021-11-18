@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const AdditionalItem = ({ title, children }) => {
+export const CourseDetailsFormItem = ({ title, children }) => {
 	return (
 		<div>
 			<h2>{title}</h2>

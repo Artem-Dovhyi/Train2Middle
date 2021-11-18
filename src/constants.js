@@ -61,3 +61,4 @@ export const AUTHOR_NAME_TEXT = 'Author name';
 export const DURATION_TEXT = 'Duration';
 export const LENGTH_ERROR_TEXT = 'At least 2 characters';
 export const DURATION_ERROR_TEXT = 'Must be > 0';
+export const CREATED_TEXT = 'Crated';

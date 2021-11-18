@@ -6,7 +6,7 @@ export const CoursesContainer = styled.section`
 	gap: 1rem;
 `;
 
-export const TopBlock = styled.div`
+export const CoursesHeader = styled.div`
 	display: grid;
 	grid-template: auto / 36rem auto;
 	justify-content: space-between;

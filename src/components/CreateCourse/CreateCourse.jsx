@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import { v4 } from 'uuid';
 
-import { AdditionalBlock, GeneralBlock } from './components';
+import { CourseDetailsForm, CourseInfoForm } from './components';
 
-import { filterById, excludeById, dateGenerator } from '../../helpers';
+import { filterById, excludeById, getCurrentDate } from '../../helpers';
 
 import { CreateCourseContainer } from './CreateCourse.styled';
 
@@ -12,7 +12,7 @@ const courseInitialForm = {
 	id: v4(),
 	title: '',
 	description: '',
-	creationDate: dateGenerator(),
+	creationDate: getCurrentDate(),
 	duration: '',
 	authors: [],
 };
@@ -48,14 +48,16 @@ export const CreateCourse = ({ authorsList, createAuthor, createCourse }) => {
 		}));
 	};
 
+	const isFormValid = () => {
+		return (
+			title.length > 2 && description.length > 2 && duration && authors.length
+		);
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		if (
-			title.length > 2 &&
-			description.length > 2 &&
-			duration &&
-			authors.length
-		) {
+
+		if (isFormValid()) {
 			createCourse(courseForm);
 			setCourseForm(courseInitialForm);
 		} else alert('Please, fill in all fields');
@@ -66,13 +68,13 @@ export const CreateCourse = ({ authorsList, createAuthor, createCourse }) => {
 
 	return (
 		<CreateCourseContainer>
-			<GeneralBlock
+			<CourseInfoForm
 				title={title}
 				description={description}
 				generalOnChange={generalOnChange}
 				handleSubmit={handleSubmit}
 			/>
-			<AdditionalBlock
+			<CourseDetailsForm
 				createAuthor={createAuthor}
 				duration={duration}
 				deleteAuthor={deleteAuthor}
